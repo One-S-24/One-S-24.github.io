@@ -41,14 +41,22 @@ header{
     display: grid;
     position: 0;
     gap: 5rem;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .navlist a{
     margin: 3rem 3rem;
     font-size: 1.3rem;
-    color: var(--color-primary);
+    color: var(--color-secondary);
     transition: all .5s ease;
+}
+
+.admIcon{
+    color: var(--color-secondary);
+    transition: all .5s ease;
+    margin: 2px 20px;
+    position: relative;
+    display: inline-flex;  
 }
 
 .navlist li{
@@ -56,26 +64,22 @@ header{
     transition: all .5s ease;
 }
 
-.navlist :hover {
-    color: grey;
+
+.navlist li:hover  {
+    color: var(--color-primary);    
+    transform: translateX(2px);        
+}
+
+.navlist a:hover  {
+    color: var(--color-primary);        
+    transform: translateX(2px);        
 }
 
 .navlist :hover i {
-    color: grey;                /* Cambia el color del ícono en hover */
+    color: var(--color-primary);    
+    
 }
 
 
 
-.admIcon{
-    transform: scale(1.5);
-    color: var(--color-primary);
-    transition: all .5s ease;
-    margin: 2px 20px;
-    position: absolute;
-    display: inline-flex;  
-}
-
-.admIcon i{
-    gap: 1rem;  
-}
 
