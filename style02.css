@@ -40,13 +40,13 @@ header{
 .navlist {
     display: grid;
     position: 0;
-    gap: 5rem;
+    gap: 3rem;
     color: var(--color-secondary);
 }
 
 .navlist a{
     margin: 3rem 3rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--color-secondary);
     transition: all .5s ease;
 }
@@ -81,11 +81,25 @@ header{
 }
 
 .footerAdmin{
-    color: var(--color-secondary);
+    color: rgb(56, 56, 56);
     position: relative;
     display: grid;
     margin: auto;
+    margin-top: auto;
+	h1 {
+		font-size: 1.5rem;
+		line-height: 1.125;
+		display: flex;
+		align-items: flex-start;
+		small {
+			font-size: 0.5em;
+			margin-left: 0.25em;
+		}
 }
-
-
-
+div {
+    border-top: 1px solid rgb(36, 36, 36);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+}
+}
