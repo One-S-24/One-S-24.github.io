@@ -80,6 +80,12 @@ header{
     
 }
 
+.footerAdmin{
+    color: var(--color-secondary);
+    position: relative;
+    display: grid;
+    margin: auto;
+}
 
 
 
