@@ -1,0 +1,269 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-style: normal;
+    text-decoration: none;
+    list-style: none;
+    font-weight: 500;
+    font-family: "Scope one", serif;
+}
+
+.wrapper .box .animation{
+  transform: translateX(0);
+  transition: .7s ease;
+  opacity: 1;
+  filter: blur(0);
+}
+
+.wrapper.active .box .animation{
+    
+    transition-delay: calc(.1s * var(--data));
+    opacity: 0;
+    filter: blur(10px);
+  }
+  .wrapper .boxRegistrarse{
+    right: 0;
+    padding: 0 40px 0 60px;
+  }
+
+  .wrapper .boxRegistrarse .animation{
+    opacity: 0;
+    z-index: -10000;
+    transition: .7s ease; 
+    transform: translateX(0);
+  }
+
+  .box form input[type="submit"], .boxRegistrarse form input[type="submit"]{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: rgba(245, 245, 245, 0.753);
+    cursor: pointer;
+    font: 0.9rem;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.7s ease;
+}
+
+  .wrapper.active .boxRegistrarse .animation{
+    opacity: 1;
+    transition: 0.5s, opacity 3s ease; 
+    z-index: 1;
+  }
+
+
+:root{
+    --color-primary: white;
+    --color-secondary: grey;
+    --hue-color: 206;
+    --bg-color: hsl(var(--hue-color), 13%, 6%);
+    --bg-color02: rgb(37, 37, 37);
+    --label-color: rgb(204, 204, 204);
+}
+
+body{
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+.wrapper{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+.box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    left: 0;
+    padding: 0 60px 0 40px;
+}
+
+.boxRegistrarse{
+    position: relative;
+    border-radius: 8px;   
+}
+
+.box form{
+    position: absolute;
+    inset: 4px;
+    padding: 60px 40px;
+    background-image: linear-gradient(140deg, #1d1d1d, var(--bg-color) 50%, var(--bg-color) 70%, var(--bg-color));    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxRegistrarse form{
+    position: absolute;
+    inset: 4px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box::after, .box::before
+{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    background-image: conic-gradient(from var(--angle), rgb(73, 73, 73), rgb(94, 94, 94), rgb(104, 104, 104), rgb(43, 43, 43), rgb(73, 73, 73));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 0.1px;
+    border-radius: 10px;
+    animation: 3s spin linear infinite;
+}
+
+.box::before{
+    filter: blur(1.5rem);
+    opacity: 0.3;
+}
+
+.box form h2{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+.boxRegistrarse form h3{
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+.box form .inputBox input, .boxRegistrarse form .inputBox input{
+    color: white;
+}
+
+.box form .inputBox{
+    width: 300px;
+    margin-top: 35px;
+}
+
+.boxRegistrarse form .inputBox{
+    
+    width: 300px;
+    margin-top: 25px;
+}
+
+
+.box form .inputBox input, .boxRegistrarse form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    z-index: 10;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.box form .inputBox label, .boxRegistrarse form .inputBox label{
+    color: var(--label-color);
+    position: absolute;
+    padding: 20px 10px 10px;
+    left: 0;
+    pointer-events: none;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: all 0.15s ease;
+}
+
+.box form .inputBox input:valid ~ label,
+.box form .inputBox input:focus ~ label,
+.boxRegistrarse form .inputBox input:valid ~ label,
+.boxRegistrarse form .inputBox input:focus ~ label
+{
+    opacity: 0;
+}
+
+.box form .inputBox i, .boxRegistrarse form .inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    color: white;
+    background-color: rgb(150, 150, 150);
+    border-radius: 4px;
+    overflow: .5s;
+    pointer-events: none;
+    
+    
+}
+
+
+.box form .links a, .boxRegistrarse form .links a{
+   color: var(--color-secondary);
+   margin: 10px 0;
+   font-size: 0.85em;
+   color: var(--color-secondary);
+   transition: all 0.5s ease;
+}
+
+.box form .links, .boxRegistrarse form .links{
+    justify-content: space-between;
+    display: flex;
+    
+}
+
+.box form .links :hover,
+ .boxRegistrarse form .links :hover{
+    color: rgb(175, 175, 175);
+}
+
+
+
+
+.box form input[type="submit"]:hover{
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+.boxRegistrarse form input[type="submit"]:hover{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    
+}
+
+.box form input[type="submit"]:active,
+ .boxRegistrarse form input[type="submit"]:active{
+    color: black;
+    background: whitesmoke;
+}
+

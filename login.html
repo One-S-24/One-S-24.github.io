@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style03.css">
+    <link href="https://fonts.googleapis.com/css2?family=Scope+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="wrapper">
+     <div class=".form-box box">
+        <form>
+            <h2 class="animation" style="--data:0;">Iniciar Sesión</h2>
+            <div class="inputBox animation" style="--data:1;">
+                <input type="text" required="required">
+                <label>Nombre de Usuario</label>
+                <i></i>
+            </div>
+
+            <div class="inputBox animation" style="--data:3;">
+                <input type="password" required="required">
+                <label>Contraseña</label>
+                <i></i>
+            </div>
+
+            <div class="links animation" style="--data:4;">
+                <a href="#">Olvide mi Contraseña</a>
+                <a class="signup-link" href="#">Registrarme</a>
+            </div>
+
+            
+                <input class="animation" type="submit" style="--data:4" value="Iniciar Sesión" onclick="redirigirADashboard()">
+            
+        </form>
+     </div>
+
+     <div class="boxRegistrarse">
+        <form>
+            <h3 class="animation">Registrarse</h3>
+            <div class="inputBox animation" style="--data:5">
+                <input type="text" required="required">
+                <label>Nombre de Usuario</label>
+                <i></i>
+            </div>
+
+            <div class="inputBox animation" style="--data:6">
+                <input type="text" required="required">
+                <label>Correo Electronico</label>
+                <i></i>
+            </div>
+
+            <div class="inputBox animation" style="--data:7">
+                <input type="password" required="required">
+                <label>Contraseña</label>
+                <i></i>
+            </div>
+
+            <div class="links animation" style="--data:8">
+                <a class="login-link" href="#">Iniciar Sesion</a>
+            </div>
+
+            <div class="links animation" style="--data:9">
+            <input class="animation" type="submit" value="Registrarse" onclick="redirigirADashboard()">
+            </div>
+        </form>
+     </div>
+
+</div>
+     <script src="assets/scrollreveal.min.js"></script>
+     <script src="main.js"></script>
+</body>
+</html>
